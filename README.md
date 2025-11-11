@@ -3,16 +3,16 @@
 StampIn is an interactive attendance monitoring tool built in Python using Jupyter Notebook and ipywidgets.  
 It allows professors or coordinators to mark and export attendance data for different sections and students.
 
+---
 
-
-OVERVIEW
+## Overview
 
 This program provides an easy-to-use graphical interface inside Jupyter Notebook to record attendance.  
 Users can select a section, mark students as present or absent, and export the attendance log to a CSV file.
 
+---
 
-
-FEATURES
+## Features
 
 - Section selection from a dropdown list.  
 - Automatic professor display based on the selected section.  
@@ -21,9 +21,9 @@ FEATURES
 - Export attendance data to a CSV file.  
 - View all recorded attendance logs within the notebook.
 
+---
 
-
-TECHNOLOGIES USED
+## Technologies Used
 
 | Tool | Purpose |
 |------|----------|
@@ -33,9 +33,9 @@ TECHNOLOGIES USED
 | datetime | Timestamp generation |
 | IPython.display | HTML and output rendering |
 
+---
 
-
-HOW TO RUN
+## How to Run
 
 1. Open the notebook file StampIn.ipynb in Jupyter Notebook or JupyterLab.  
 2. Run all cells (Kernel → Restart & Run All).  
@@ -45,17 +45,17 @@ HOW TO RUN
    - Click Save Attendance to log entries.
    - Click Export CSV to save data as a .csv file.
 
+---
 
-
-OUTPUT
+## Output
 
 The program generates:
 - attendance_log.csv — contains timestamped attendance records with the following columns:
   timestamp, date, time, section, professor, student, status
 
+---
 
-
-EXAMPLE SECTIONS AND STUDENTS
+## Example Sections and Students
 
 Sections
 - CPE106-4_E02_1T2526 — Engr. Dionis Padilla  
@@ -66,11 +66,9 @@ Students
 - Patricia Deeone Macainag  
 - Aethan Carlo Tabungar  
 
+---
 
+## Authors
 
-AUTHORS
-
-Developed by:
-Landong, Evan Josh
-Macainag, Patricia Deeone
-Tabungar, Aethan Carlo 
+Developed by students of Mapúa University  
+For CPE106L - Object-Oriented Programming Laboratory
