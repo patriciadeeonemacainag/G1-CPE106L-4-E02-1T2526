@@ -8,7 +8,7 @@ It allows professors or coordinators to mark and export attendance data for diff
 ## Overview
 
 This program provides an easy-to-use graphical interface inside Jupyter Notebook to record attendance.  
-Users can select a section, mark students as present or absent, and export the attendance log to a CSV file.
+Users can select a section, mark students as present or absent and export the attendance log to a CSV file.
 
 ---
 
