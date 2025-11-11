@@ -70,5 +70,7 @@ Students
 
 ## Authors
 
-Developed by students of Mapúa University  
-For CPE106L - Object-Oriented Programming Laboratory
+Developed by:
+Evan Josh Landong  
+Patricia Deeone Macainag  
+Aethan Carlo Tabungar  
