@@ -71,6 +71,6 @@ Students
 ## Authors
 
 Developed by:
-Evan Josh Landong  
-Patricia Deeone Macainag  
-Aethan Carlo Tabungar  
+- Evan Josh Landong  
+- Patricia Deeone Macainag  
+- Aethan Carlo Tabungar  
