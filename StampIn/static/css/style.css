@@ -1,0 +1,464 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Century Gothic', 'Futura', 'Avenir Next', 'Trebuchet MS', sans-serif;
+    background: #2a2a2a;
+    color: #e5e5e5;
+    line-height: 1.6;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    padding: 0;
+    border-radius: 16px;
+    box-shadow: 
+        0 0 0 1px rgba(0, 0, 0, 0.06),
+        0 10px 15px -3px rgba(0, 0, 0, 0.08),
+        0 20px 25px -5px rgba(0, 0, 0, 0.06),
+        0 30px 40px -10px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 48px 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+}
+
+.header h1 {
+    color: #ffffff;
+    margin: 0 0 8px 0;
+    font-size: 2.2em;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.header p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+/* Section Box */
+.section-box {
+    border: none;
+    border-bottom: 1px solid #eef0f2;
+    padding: 32px 40px;
+    margin: 0;
+    background: #ffffff;
+}
+
+.section-box h3 {
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.form-group label {
+    display: inline-block;
+    min-width: 80px;
+    color: #4b5563;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.dropdown {
+    flex: 1;
+    max-width: 400px;
+    height: 44px;
+    padding: 0 16px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #1a1a1a;
+}
+
+.dropdown:hover {
+    border-color: #d1d5db;
+}
+
+.dropdown:focus {
+    outline: none;
+    border-color: #1a1a1a;
+    box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.05);
+}
+
+/* Professor Display */
+.professor-display {
+    padding: 16px 20px;
+    background: #f9fafb;
+    border-radius: 8px;
+    margin-top: 16px;
+    border: 1px solid #eef0f2;
+}
+
+.professor-display span {
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.professor-display strong {
+    color: #1a1a1a;
+    margin-left: 8px;
+    font-weight: 600;
+}
+
+/* Attendance Section */
+.attendance-section {
+    margin: 0;
+    padding: 32px 40px;
+    background: #ffffff;
+    border-bottom: 1px solid #eef0f2;
+}
+
+.attendance-section h3 {
+    color: #6b7280;
+    margin-bottom: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Student List */
+.student-list {
+    border: 1px solid #eef0f2;
+    border-radius: 12px;
+    padding: 8px;
+    background: #fafbfc;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.student-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.student-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.student-list::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 4px;
+}
+
+.student-list::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+.student-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    margin: 4px 0;
+    border-radius: 8px;
+    background: #ffffff;
+    transition: all 0.15s ease;
+    border: 1px solid transparent;
+}
+
+.student-row:hover {
+    border-color: #e5e7eb;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.student-name {
+    flex: 1;
+    color: #1a1a1a;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.status-dropdown {
+    width: 140px;
+    height: 38px;
+    padding: 0 12px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 6px;
+    background: #ffffff;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s ease;
+    color: #1a1a1a;
+}
+
+.status-dropdown:hover {
+    border-color: #d1d5db;
+}
+
+.status-dropdown:focus {
+    outline: none;
+    border-color: #1a1a1a;
+    box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.05);
+}
+
+/* Control Panel */
+.control-panel {
+    display: flex;
+    gap: 12px;
+    margin: 0;
+    padding: 32px 40px;
+    flex-wrap: wrap;
+    background: #fafbfc;
+}
+
+.btn {
+    padding: 12px 24px;
+    background: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn:hover {
+    background: #000000;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Status Message */
+#statusMessage {
+    margin: 0;
+    padding: 0 40px;
+    min-height: 0;
+}
+
+.status-msg {
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin: 0 0 24px 0;
+    font-weight: 500;
+    font-size: 14px;
+    animation: slideDown 0.3s ease;
+    border-left: 3px solid;
+}
+
+.status-success {
+    background: #f0fdf4;
+    color: #166534;
+    border-color: #22c55e;
+}
+
+.status-error {
+    background: #fef2f2;
+    color: #991b1b;
+    border-color: #ef4444;
+}
+
+.status-warning {
+    background: #fffbeb;
+    color: #92400e;
+    border-color: #f59e0b;
+}
+
+.status-info {
+    background: #eff6ff;
+    color: #1e40af;
+    border-color: #3b82f6;
+}
+
+/* Output Area */
+.output-area {
+    margin: 0;
+    padding: 32px 40px;
+    background: #fafbfc;
+    border: none;
+    border-top: 1px solid #eef0f2;
+    min-height: 0;
+    max-height: 600px;
+    overflow-y: auto;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.output-area:empty {
+    display: none;
+}
+
+.output-area pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #374151;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 15px 0;
+    font-size: 13px;
+    border: 1px solid #eef0f2;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th {
+    background: #f9fafb;
+    color: #1a1a1a;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #eef0f2;
+}
+
+table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f3f4f6;
+    color: #374151;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+table tr:hover {
+    background: #fafbfc;
+}
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading State */
+.loading {
+    position: relative;
+    opacity: 0.6;
+}
+
+.loading::after {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 8px;
+    border: 2px solid #d1d5db;
+    border-top-color: #1a1a1a;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .container {
+        border-radius: 12px;
+    }
+    
+    .header,
+    .section-box,
+    .attendance-section,
+    .control-panel,
+    #statusMessage,
+    .output-area {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .header {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    .header h1 {
+        font-size: 1.8em;
+    }
+    
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dropdown {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .control-panel {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .student-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 16px;
+    }
+    
+    .status-dropdown {
+        width: 100%;
+    }
+}

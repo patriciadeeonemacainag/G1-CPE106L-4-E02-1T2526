@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StampIn - Attendance System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>📋 StampIn</h1>
+            <p>Attendance Monitoring System | CPE106L-4/E02</p>
+        </div>
+
+        <!-- Class Information -->
+        <div class="section-box">
+            <h3>Class Information</h3>
+            <div class="form-group">
+                <label for="sectionSelect">Section:</label>
+                <select id="sectionSelect" class="dropdown">
+                    {% for section_code, professor in sections.items() %}
+                    <option value="{{ section_code }}" data-professor="{{ professor }}">
+                        {{ section_code }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div id="professorDisplay" class="professor-display"></div>
+        </div>
+
+        <!-- Mark Attendance -->
+        <div class="attendance-section">
+            <h3>Mark Attendance</h3>
+            <div class="student-list" id="studentList">
+                {% for student in students %}
+                <div class="student-row" data-index="{{ loop.index0 }}">
+                    <div class="student-name">{{ student }}</div>
+                    <select class="status-dropdown" data-student="{{ student }}">
+                        <option value="Present">Present</option>
+                        <option value="Absent">Absent</option>
+                        <option value="Late">Late</option>
+                        <option value="Excused">Excused</option>
+                    </select>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Control Buttons -->
+        <div class="control-panel">
+            <button id="saveBtn" class="btn">💾 Save Attendance</button>
+            <button id="exportBtn" class="btn">📤 Export CSV</button>
+            <button id="viewLogBtn" class="btn">📊 View Log</button>
+            <button id="clearBtn" class="btn">🗑️ Clear Output</button>
+        </div>
+
+        <!-- Status Message -->
+        <div id="statusMessage"></div>
+
+        <!-- Output Area -->
+        <div id="outputArea" class="output-area"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
