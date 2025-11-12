@@ -21,7 +21,6 @@ Users can select a section, mark students as present, absent, late, or excused, 
 - Export attendance data to a CSV file.  
 - View all recorded attendance logs in a clean table format.  
 - Summary statistics showing attendance distribution.  
-- Modern dark theme with minimalist design.
 
 ---
 
@@ -35,25 +34,6 @@ Users can select a section, mark students as present, absent, late, or excused, 
 | SQLite | Database for storing records |
 | HTML/CSS/JavaScript | Frontend interface |
 | pandas | Data processing and CSV export |
-
----
-
-## Project Structure
-
-```
-stampin/
-├── app.py                 # Main Flask application
-├── database.py            # Database models and configuration
-├── static/
-│   ├── css/
-│   │   └── style.css     # Styling with dark theme
-│   └── js/
-│       └── script.js     # Frontend logic
-├── templates/
-│   └── index.html        # Main interface
-└── instance/
-    └── stampin.db        # SQLite database (auto-generated)
-```
 
 ---
 
