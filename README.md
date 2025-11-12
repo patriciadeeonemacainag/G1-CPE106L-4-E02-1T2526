@@ -98,18 +98,6 @@ The SQLite database contains the following table:
 
 ---
 
-## API Endpoints
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/` | GET | Main page |
-| `/save-attendance` | POST | Save attendance records to database |
-| `/get-logs` | GET | Retrieve all attendance records |
-| `/export-csv` | GET | Download attendance data as CSV |
-| `/get-summary` | GET | Get attendance statistics |
-
----
-
 ## Output
 
 The program generates:
@@ -132,15 +120,6 @@ The program generates:
 
 ---
 
-## Design Features
-
-- **Dark Theme:** Professional grayscale color scheme with dark gray background
-- **Minimalist UI:** Clean, modern interface with Century Gothic font
-- **Responsive Design:** Works on desktop and mobile devices
-- **Real-time Updates:** Instant feedback on all actions
-
----
-
 ## Authors
 
 Developed by:
@@ -150,4 +129,4 @@ Developed by:
 
 **Course:** CPE106L-4/E02  
 **Instructor:** Engr. Erinn Chloe Sanchez  
-**Date:** November 2025
+
