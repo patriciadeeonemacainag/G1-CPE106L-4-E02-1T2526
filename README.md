@@ -1,14 +1,14 @@
 # StampIn: Attendance Monitoring System
 
-StampIn is an interactive attendance monitoring tool built in Python using Jupyter Notebook and ipywidgets.  
+StampIn is a web-based attendance monitoring tool built with Flask and SQLite.  
 It allows professors or coordinators to mark and export attendance data for different sections and students.
 
 ---
 
 ## Overview
 
-This program provides an easy-to-use graphical interface inside Jupyter Notebook to record attendance.  
-Users can select a section, mark students as present or absent and export the attendance log to a CSV file.
+This program provides an easy-to-use web interface to record attendance.  
+Users can select a section, mark students as present, absent, late, or excused, and export the attendance log to a CSV file.
 
 ---
 
@@ -16,10 +16,12 @@ Users can select a section, mark students as present or absent and export the at
 
 - Section selection from a dropdown list.  
 - Automatic professor display based on the selected section.  
-- Student attendance buttons to mark each student as present or absent.  
-- Save attendance logs with timestamps and section information.  
+- Student attendance dropdowns to mark each student (Present, Absent, Late, Excused).  
+- Save attendance logs with timestamps to SQLite database.  
 - Export attendance data to a CSV file.  
-- View all recorded attendance logs within the notebook.
+- View all recorded attendance logs in a clean table format.  
+- Summary statistics showing attendance distribution.  
+- Modern dark theme with minimalist design.
 
 ---
 
@@ -28,43 +30,114 @@ Users can select a section, mark students as present or absent and export the at
 | Tool | Purpose |
 |------|----------|
 | Python 3 | Core programming language |
-| pandas | Data storage and export |
-| ipywidgets | Interactive buttons and dropdown menus |
-| datetime | Timestamp generation |
-| IPython.display | HTML and output rendering |
+| Flask | Web framework for backend |
+| SQLAlchemy | Database ORM |
+| SQLite | Database for storing records |
+| HTML/CSS/JavaScript | Frontend interface |
+| pandas | Data processing and CSV export |
+
+---
+
+## Project Structure
+
+```
+stampin/
+├── app.py                 # Main Flask application
+├── database.py            # Database models and configuration
+├── static/
+│   ├── css/
+│   │   └── style.css     # Styling with dark theme
+│   └── js/
+│       └── script.js     # Frontend logic
+├── templates/
+│   └── index.html        # Main interface
+└── instance/
+    └── stampin.db        # SQLite database (auto-generated)
+```
 
 ---
 
 ## How to Run
 
-1. Open the notebook file StampIn.ipynb in Jupyter Notebook or JupyterLab.  
-2. Run all cells (Kernel → Restart & Run All).  
-3. The interactive interface will appear inside the notebook:
-   - Select a section.
-   - Mark attendance for each student.
-   - Click Save Attendance to log entries.
-   - Click Export CSV to save data as a .csv file.
+1. **Install dependencies:**
+   ```bash
+   pip install flask flask-sqlalchemy pandas
+   ```
+
+2. **Run the application:**
+   ```bash
+   python app.py
+   ```
+
+3. **Open in browser:**
+   - Navigate to `http://localhost:5000`
+   - The database will be created automatically on first run
+
+4. **Use the interface:**
+   - Select a section from the dropdown
+   - Mark attendance for each student
+   - Click "💾 Save Attendance" to store records in database
+   - Click "📊 View Log" to see all saved records
+   - Click "📤 Export CSV" to download data as a .csv file
+
+---
+
+## Database Schema
+
+The SQLite database contains the following table:
+
+**attendance_records**
+- `id` — Primary key
+- `timestamp` — Full timestamp (YYYY-MM-DD HH:MM:SS)
+- `date` — Date only (YYYY-MM-DD)
+- `time` — Time only (HH:MM:SS)
+- `section` — Class section code
+- `professor` — Professor name
+- `student` — Student name
+- `status` — Attendance status (Present/Absent/Late/Excused)
+
+---
+
+## API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/` | GET | Main page |
+| `/save-attendance` | POST | Save attendance records to database |
+| `/get-logs` | GET | Retrieve all attendance records |
+| `/export-csv` | GET | Download attendance data as CSV |
+| `/get-summary` | GET | Get attendance statistics |
 
 ---
 
 ## Output
 
 The program generates:
-- attendance_log.csv — contains timestamped attendance records with the following columns:
-  timestamp, date, time, section, professor, student, status
+- **stampin.db** — SQLite database with all attendance records
+- **StampIn_Attendance_YYYYMMDD_HHMMSS.csv** — Exported CSV file with columns:
+  - id, timestamp, date, time, section, professor, student, status
 
 ---
 
 ## Example Sections and Students
 
-Sections
+**Sections:**
 - CPE106-4_E02_1T2526 — Engr. Dionis Padilla  
 - CPE106L-4_E01_1T2526 — Engr. Erinn Chloe Sanchez  
 
-Students
+**Students:**
 - Evan Josh Landong  
 - Patricia Deeone Macainag  
 - Aethan Carlo Tabungar  
+
+---
+
+## Design Features
+
+- **Dark Theme:** Professional grayscale color scheme with dark gray background
+- **Minimalist UI:** Clean, modern interface with Century Gothic font
+- **Responsive Design:** Works on desktop and mobile devices
+- **Real-time Updates:** Instant feedback on all actions
 
 ---
 
@@ -74,3 +147,7 @@ Developed by:
 - Evan Josh Landong  
 - Patricia Deeone Macainag  
 - Aethan Carlo Tabungar  
+
+**Course:** CPE106L-4/E02  
+**Instructor:** Engr. Erinn Chloe Sanchez  
+**Date:** November 2025
